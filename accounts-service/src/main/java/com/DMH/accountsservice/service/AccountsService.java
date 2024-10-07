@@ -6,15 +6,9 @@ import com.DMH.accountsservice.exceptions.ResourceNotFoundException;
 import com.DMH.accountsservice.repository.AccountsRepository;
 import com.DMH.accountsservice.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
-
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,9 +19,6 @@ public class AccountsService {
 
     @Autowired
     private TransactionRepository transactionRepository;
-
-    @Autowired
-    private WebClient webClient;
 
 
     public AccountResponse getAccountSummary(Long accountId) throws ResourceNotFoundException {
@@ -113,21 +104,4 @@ public class AccountsService {
         return response;
     }
 
-    public Mono<ResponseEntity<Map<String, String>>> updateAlias(Long id, AccountUpdateRequest request) {
-        // Actualiza el alias en la tabla de cuentas
-        accountsRepository.updateAlias(id, request.getAlias());
-
-        // Realiza la llamada PATCH al servicio de usuarios
-        return webClient.patch()
-                .uri("/users/update/alias/{id}", id)
-                .bodyValue(request) // Asegúrate de que request esté en formato JSON
-                .retrieve()
-                .bodyToMono(String.class)
-                .map(response -> ResponseEntity.ok(Collections.singletonMap("message", "Alias actualizado exitosamente")))
-                .onErrorResume(e -> {
-                    // Manejo de errores
-                    return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                            .body(Collections.singletonMap("error", "Error al actualizar el alias en el servicio de usuarios: " + e.getMessage())));
-                });
-    }
 }

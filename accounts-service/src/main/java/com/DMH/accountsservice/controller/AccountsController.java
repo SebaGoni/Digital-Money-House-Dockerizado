@@ -10,6 +10,8 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
+
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -65,7 +67,16 @@ public class AccountsController {
 
     @PatchMapping("/update/alias/{id}")
     public Mono<ResponseEntity<Map<String, String>>> updateAlias(@PathVariable Long id, @RequestBody AccountUpdateRequest request) {
-        return accountsService.updateAlias(id, request);
+        accountsRepository.updateAlias(id, request.getAlias());
+        return webClient.patch()
+                .uri("/users/update/alias/{id}", id)
+                .bodyValue(request)
+                .retrieve()
+                .bodyToMono(String.class)
+                .map(response -> ResponseEntity.ok(Collections.singletonMap("message", "Alias actualizado exitosamente")))
+                .onErrorResume(e -> {
+                    return Mono.just(ResponseEntity.status(500).body(Collections.singletonMap("error", "Error al actualizar el alias en el servicio de usuarios: " + e.getMessage())));
+                });
     }
 
 }
