@@ -4,7 +4,7 @@ Digital Money House una billetera virtual. El proyecto consiste en desarrollar e
 El lenguaje de programacion es Java con Springboot y una arquitectura de microservicios.
 
 
-> ### Las funcionalidades desarrolladas son:
+### Las funcionalidades desarrolladas son:
 
 - Registro de usuario
 - Envio de codigo por mail para validar registro
@@ -61,15 +61,15 @@ El lenguaje de programacion es Java con Springboot y una arquitectura de microse
 > 2. API de ACCOUNTS
 > http://localhost:8085/swagger-ui/index.html#/
 
-
+> [!NOTE]
 > # Estructura del proyecto
 > ![Estructura del proyecto](https://res.cloudinary.com/dbguimlv8/image/upload/v1729350702/whn9bhfuyrqlheohwe20.jpg)
 
-
+> [!NOTE]
 > # Testing Manual
 https://docs.google.com/spreadsheets/d/e/2PACX-1vQvakE-DpJwgJxJVJXQ2IVh9RE_bm5vWAqPP2DmGk_Em059av1O5lwgbTbpjbor9ZFZ6cubM9Ns0MEa/pubhtml
 
-
+> [!NOTE]
 # Testing Automatizado
 https://github.com/SebaGoni/automated-tests.git
 
