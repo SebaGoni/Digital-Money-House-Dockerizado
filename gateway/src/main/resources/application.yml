@@ -5,39 +5,39 @@ spring:
     import: "optional:configserver:"
   cloud:
     config:
-      uri: http://localhost:8888/
+      uri: http://config-server:8888/
+      discovery:
+        serviceId: config-server
       enabled: false
     gateway:
-      global cors:
-        corsConfigurations:
-          '[/**]':
-            allowedOriginPatterns:
-              - "*"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - PATCH
-              - DELETE
-              - OPTIONS
-            allowedHeaders:
-              - Origin
-              - X-Requested-With
-              - Content-Type
-              - Accept
-              - Authorization
-            allowCredentials: true
-            maxAge: 3600
+      globalcors:
+          corsConfigurations:
+            '[/**]':
+              allowedOrigins: "http://localhost:3000"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - PATCH
+                - DELETE
+                - OPTIONS
+              allowedHeaders:
+                - Origin
+                - X-Requested-With
+                - Content-Type
+                - Accept
+                - Authorization
+              allowCredentials: true
+              maxAge: 3600
       routes:
         - id: users-service
-          uri: lb://users-service
+          uri: http://users-service:8082
           predicates:
             - Path=/users/**
         - id: accounts-service
-          uri: lb://accounts-service
+          uri: http://accounts-service:8085
           predicates:
             - Path=/accounts/**
-
 management:
   endpoints:
     web:
@@ -49,13 +49,17 @@ management:
 info:
   app:
     name: Gateway
-    description: API gateway from github
+    description: API gateway
     version: 1.0.0
 
 eureka:
+  instance:
+    hostname: localhost
+    statusPageUrlPath: http://localhost:8084/actuator/info
+    healthCheckUrlPath: http://localhost:8084/actuator/info
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
 
 server:
   port: 8084
