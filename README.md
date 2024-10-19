@@ -3,6 +3,7 @@
 Digital Money House una billetera virtual. El proyecto consiste en desarrollar el backend y la API que consume el frontend e integrarlo al mismo.
 El lenguaje de programacion es Java con Springboot y una arquitectura de microservicios.
 
+
 > ### Las funcionalidades desarrolladas son:
 
 - Registro de usuario
@@ -24,6 +25,7 @@ El lenguaje de programacion es Java con Springboot y una arquitectura de microse
 - Cantidad de dinero disponible
 - Tarjetas registradas
 
+
 > [!NOTE]
 > ### Microservicios
 
@@ -41,12 +43,36 @@ El lenguaje de programacion es Java con Springboot y una arquitectura de microse
 > 2. ejecutar el comando -> npm install
 > 3. ejecutar el comando -> npm start
 
+
 > [!NOTE]
 > # Pasos para ejecutar el backend
 > 1. Clonar repositorio del backend -> git clone https://github.com/SebaGoni/Digital-Money-House.git
 > 2. Abrir el proyecto con IntelliJ o Ecipse
 > 3. Crear la base de datos Mysql desde el archivo docker-compose que esta en el directorio raiz (se debe tener docker instalado)
 > 3. Correr cada microservicio en el siguiente orden: eureka-server, config-server, gateway, users-service, accounts-service
+
+
+> [!NOTE]
+> # Documentacion (SWAGGER)
+> 
+> 1. API de USERS
+> http://localhost:8082/swagger-ui/index.html#/
+
+> 2. API de ACCOUNTS
+> http://localhost:8085/swagger-ui/index.html#/
+
+
+> # Estructura del proyecto
+> ![Estructura del proyecto](https://res.cloudinary.com/dbguimlv8/image/upload/v1729350702/whn9bhfuyrqlheohwe20.jpg)
+
+
+> # Testing Manual
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQvakE-DpJwgJxJVJXQ2IVh9RE_bm5vWAqPP2DmGk_Em059av1O5lwgbTbpjbor9ZFZ6cubM9Ns0MEa/pubhtml
+
+
+# Testing Automatizado
+https://github.com/SebaGoni/automated-tests.git
+
 
 ## MUCHAS GRACIAS! :smile:
 
