@@ -73,6 +73,9 @@ https://docs.google.com/spreadsheets/d/e/2PACX-1vQvakE-DpJwgJxJVJXQ2IVh9RE_bm5vW
 # Testing Automatizado
 [https://github.com/SebaGoni/automated-tests.git](https://github.com/SebaGoni/automated-testing-DMH.git)
 
+> [!NOTE]
+# Testing Exploratorio
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQWNB4z3GBbumKKREOA1969XGaINrNy_aAEHgExu4O4v6nI-lUSvXdN6wD8OlCUmIBy5iG_5qOlf7eq/pubhtml
 
 ## MUCHAS GRACIAS! :smile:
 
