@@ -25,13 +25,12 @@ services:
     depends_on:
       - eureka-server
 
-  gateway:
+  gateway-service:
     build: gateway/
     ports:
       - 8084:8084
     depends_on:
       - eureka-server
-      - config-server
 
   users-service:
     build: users-service/
