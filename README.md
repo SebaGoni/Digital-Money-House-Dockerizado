@@ -46,10 +46,14 @@ El lenguaje de programacion es Java con Springboot y una arquitectura de microse
 
 > [!NOTE]
 > # Pasos para ejecutar el backend
-> 1. Clonar repositorio del backend -> git clone https://github.com/SebaGoni/Digital-Money-House-dockerizado.git
-> 2. Abrir el proyecto con IntelliJ o Eclipse
-> 3. Ejecutar desde la terminal y desde el directorio raiz del proyecto el comando docker-compose up (se debe tener docker instalado)
+> 1. Clonar repositorio del backend -> git clone https://github.com/SebaGoni/Digital-Money-House.git
+> 2. Abrir el proyecto con IntelliJ o Ecipse
+> 3. Crear la base de datos Mysql desde el archivo docker-compose que esta en el directorio raiz (se debe tener docker instalado)
+> 3. Correr cada microservicio en el siguiente orden: eureka-server, config-server, gateway, users-service, accounts-service
 
+> [!NOTE]
+> # Video presentacion
+[![Video presentacion del proyecto](https://res.cloudinary.com/dbguimlv8/image/upload/v1729521527/presentacion_syqrl3.jpg)](https://youtu.be/ynSnZCV2b4E)
 
 > [!NOTE]
 > # Documentacion (SWAGGER)
@@ -61,20 +65,36 @@ El lenguaje de programacion es Java con Springboot y una arquitectura de microse
 > http://localhost:8085/swagger-ui/index.html#/
 
 > [!NOTE]
+> # Documentacion (POSTMAN)
+https://www.postman.com/winter-crater-900915/digital-money-house/folder/fxr13k7/dmh?action=share&creator=24678576&ctx=documentation
+
+> [!NOTE]
 > # Estructura del proyecto
 > ![Estructura del proyecto](https://res.cloudinary.com/dbguimlv8/image/upload/v1729350702/whn9bhfuyrqlheohwe20.jpg)
+
+> [!NOTE]
+> # Testing Kick Off
+https://docs.google.com/document/d/e/2PACX-1vRPGp2omCvcFaL75DRpgmVCA95vu5G2Z4m48kdGxicE_0nNGBhaZHJsv9jOpIjFhdV_BQgvsGRPeq6h/pub
 
 > [!NOTE]
 > # Testing Manual
 https://docs.google.com/spreadsheets/d/e/2PACX-1vQvakE-DpJwgJxJVJXQ2IVh9RE_bm5vWAqPP2DmGk_Em059av1O5lwgbTbpjbor9ZFZ6cubM9Ns0MEa/pubhtml
 
 > [!NOTE]
-# Testing Automatizado
-[https://github.com/SebaGoni/automated-tests.git](https://github.com/SebaGoni/automated-testing-DMH.git)
+> # Testing Automatizado
+https://github.com/SebaGoni/automated-tests.git](https://github.com/SebaGoni/automated-testing-DMH.git
 
 > [!NOTE]
-# Testing Exploratorio
+> # Testing Exploratorio
 https://docs.google.com/spreadsheets/d/e/2PACX-1vQWNB4z3GBbumKKREOA1969XGaINrNy_aAEHgExu4O4v6nI-lUSvXdN6wD8OlCUmIBy5iG_5qOlf7eq/pubhtml
+
+> [!NOTE]
+> # QA Sign off
+https://docs.google.com/document/d/e/2PACX-1vTwCcR2815HXulG9w2fkxkHLhPj9M7whPjRyHhFC97uoeRhGBAm2AtpeVykODk--kb5Rt7fudZg2m5h/pub
+
+> [!NOTE]
+> # Documentacion - Informe del Proyecto
+https://docs.google.com/document/d/e/2PACX-1vRxJDa8K7NRzEEuKpS2LjARWBEo_kArqmjoQ0KE5VkEj9BGU_nb21gRc3z3mM_p8AEA50eNtV-cJHyp/pub
 
 ## MUCHAS GRACIAS! :smile:
 
