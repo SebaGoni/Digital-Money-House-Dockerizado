@@ -46,10 +46,9 @@ El lenguaje de programacion es Java con Springboot y una arquitectura de microse
 
 > [!NOTE]
 > # Pasos para ejecutar el backend
-> 1. Clonar repositorio del backend -> git clone https://github.com/SebaGoni/Digital-Money-House.git
-> 2. Abrir el proyecto con IntelliJ o Ecipse
-> 3. Crear la base de datos Mysql desde el archivo docker-compose que esta en el directorio raiz (se debe tener docker instalado)
-> 3. Correr cada microservicio en el siguiente orden: eureka-server, config-server, gateway, users-service, accounts-service
+> 1. Clonar repositorio del backend -> git clone https://github.com/SebaGoni/Digital-Money-House-Dockerizado.git
+> 2. Abrir el proyecto con IntelliJ o Eclipse
+> 3. Ejecutar docker-compose up (se debe estar ubicado en el directorio raiz y tener docker instalado)
 
 > [!NOTE]
 > # Video presentacion
