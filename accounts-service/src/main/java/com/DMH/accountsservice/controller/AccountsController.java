@@ -26,7 +26,7 @@ public class AccountsController {
     @Autowired
     public AccountsController(AccountsRepository accountsRepository, WebClient.Builder webClientBuilder) {
         this.accountsRepository = accountsRepository;
-        this.webClient = webClientBuilder.baseUrl("http://gateway:8084").build();
+        this.webClient = webClientBuilder.baseUrl("http://gateway-service:8084").build();
     }
 
     @PostMapping("/create")
