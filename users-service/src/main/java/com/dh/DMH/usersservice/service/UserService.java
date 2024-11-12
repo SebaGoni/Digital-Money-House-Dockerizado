@@ -14,10 +14,13 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.dh.DMH.usersservice.repository.UserRepository;
-import java.io.IOException;
+
+import java.io.*;
 import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.util.*;
+import java.util.stream.Collectors;
+
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.transaction.annotation.Transactional;
@@ -101,7 +104,7 @@ public class UserService {
         return registeredUser;
     }
 
-    private String generateCvu() throws IOException {
+    /*private String generateCvu() throws IOException {
         Resource resource = new ClassPathResource("cvu.txt");
         List<String> cvus = new ArrayList<>(Files.readAllLines(resource.getFile().toPath()));
         Collections.shuffle(cvus);
@@ -113,7 +116,34 @@ public class UserService {
         List<String> aliases = new ArrayList<>(Files.readAllLines(resource.getFile().toPath()));
         Collections.shuffle(aliases);
         return aliases.get(0);
+    }*/
+
+    private String generateCvu() throws IOException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("cvu.txt");
+        if (inputStream == null) {
+            throw new FileNotFoundException("Archivo cvu.txt no encontrado en el classpath");
+        }
+
+        List<String> cvus = new BufferedReader(new InputStreamReader(inputStream))
+                .lines()
+                .collect(Collectors.toList());
+        Collections.shuffle(cvus); // Mezcla las líneas
+        return cvus.get(0); // Devuelve el primer valor aleatorio
     }
+
+    private String generateAlias() throws IOException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("alias.txt");
+        if (inputStream == null) {
+            throw new FileNotFoundException("Archivo alias.txt no encontrado en el classpath");
+        }
+
+        List<String> aliases = new BufferedReader(new InputStreamReader(inputStream))
+                .lines()
+                .collect(Collectors.toList());
+        Collections.shuffle(aliases); // Mezcla las líneas
+        return aliases.get(0); // Devuelve el primer valor aleatorio
+    }
+
 
     public String generateVerificationCode(User user) {
         String code = String.format("%06d", new Random().nextInt(999999));
