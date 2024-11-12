@@ -48,7 +48,8 @@ El lenguaje de programacion es Java con Springboot y una arquitectura de microse
 > # Pasos para ejecutar el backend
 > 1. Clonar repositorio del backend -> git clone https://github.com/SebaGoni/Digital-Money-House-Dockerizado.git
 > 2. Abrir el proyecto con IntelliJ o Eclipse
-> 3. Ejecutar docker-compose up (se debe estar ubicado en el directorio raiz y tener docker instalado)
+> 3. Ejecutar mvn package en cada microservicio
+> 4. Ejecutar docker-compose up (si algun microservicio se cae volver a correrlo desde docker desktop una vez que este todo creado)
 
 > [!NOTE]
 > # Video presentacion
